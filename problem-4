@@ -1,0 +1,35 @@
+ // Segregate 0s and 1s element in an array [PROBLEM 4]
+#include <iostream>
+#include<climits>
+using namespace std;
+
+int main() {
+    int arr[6] = {0,1,0,1,0,1};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int start = 0;
+    int end = n-1;
+    
+    while(start < end){
+        if(arr[start] == 0){
+             start++;
+        }
+        
+        else if(arr[end] == 1){
+            end--;
+        }
+        
+        else{
+            swap(arr[start], arr[end]);
+            start++;
+            end--;
+        }
+        
+    }
+    
+    for(int i = 0; i < n; i++){
+        cout << arr[i]<< " ";
+    }
+    
+    
+    return 0;
+}
